@@ -46,7 +46,7 @@ iptables -I OUTPUT 1 -d <VPN-SERVER-IP> -j ACCEPT
 # Copy this rule for any specific server you want exeternal pass-thru for...
 
 # If you make a mistake, you can remove rules with this line:
-#iptables -D OUTPUT -d <VPN-SERVER-IP> -j ACCEPT
+#iptables -D OUTPUT -d <SERVER-IP-TO-BLOCK> -j ACCEPT
 
 
 # Allow TUN
