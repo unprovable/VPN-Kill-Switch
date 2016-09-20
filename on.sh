@@ -43,8 +43,11 @@ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 # Allow VPN traffic:
 iptables -I OUTPUT 1 -d <VPN-SERVER-IP> -j ACCEPT
-iptables -D OUTPUT -d <VPN-SERVER-IP> -j ACCEPT
-# Copy these rules for any specific server you want exeternal pass-thru for...
+# Copy this rule for any specific server you want exeternal pass-thru for...
+
+# If you make a mistake, you can remove rules with this line:
+#iptables -D OUTPUT -d <VPN-SERVER-IP> -j ACCEPT
+
 
 # Allow TUN
 iptables -A INPUT -i tun+ -j ACCEPT
